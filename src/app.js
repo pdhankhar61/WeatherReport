@@ -6,10 +6,11 @@ const app = express();
 const port= process.env.PORT||5500 ;
 
 let staticpath=path.join(__dirname,"../public");
-
+let staticpath2=path.join(__dirname,"../templates/views");
+let staticpath3=path.join(__dirname,"../templates/partials");
 app.set("view engine","hbs");
-app.set("views","D:/nodejslearn/expresswebsite/templates/views");
-hbs.registerPartials("D:/nodejslearn/expresswebsite/templates/partials");
+app.set("views",staticpath2);
+hbs.registerPartials(staticpath3);
 app.use(express.static(staticpath));//absolute path ------>>>   "D:/nodejslearn/expresswebsite/public"
 
 
